@@ -63,7 +63,7 @@ pdf.create(html [, options], function(err, buffer){});
 
 `html-pdf` can read the header or footer either out of the `footer` and `header` config object or out of the html source. You can either set a default header & footer or overwrite that by appending a page number (1 based index) to the `id="pageHeader"` attribute of a html tag.
 
-You can use any combination of those tags. The library tries to find any element, that contains the `pageHeader` or `pageFooter` id prefix.
+You can use any combination of those tags. The library tries to find any element, that contains the `pageHeader`, `pageFooter`, or `pageWatermark` id prefix.
 ```html
 <div id="pageHeader">Default header</div>
 <div id="pageHeader-first">Header on first page</div>
@@ -75,7 +75,13 @@ You can use any combination of those tags. The library tries to find any element
 <div id="pageFooter-first">Footer on first page</div>
 <div id="pageFooter-2">Footer on second page</div>
 <div id="pageFooter-last">Footer on last page</div>
+...
+<div id="pageWatermark">Default watermark</div>
+<div id="pageWatermark-first">Watermark on first page</div>
+<div id="pageWatermark-2">Watermark on second page</div>
+<div id="pageWatermark-last">Watermark on last page</div>
 ```
+Note: The watermark will only be appended as an additional dom element. It will be your duty to style it accordingly.
 
 
 ## Options
